@@ -28,7 +28,6 @@ cd <nom-du-repo>
 ### 2️⃣ Installer les dépendances R
 Ouvrez R ou RStudio, puis exécutez :
 
-Copier le code
 ```r
 install.packages(c("worldfootballR", "dplyr", "readr", "lubridate", "openxlsx"))
 ```
