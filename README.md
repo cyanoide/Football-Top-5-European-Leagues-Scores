@@ -13,7 +13,7 @@ Les résultats sont exportés en Excel, puis mis à jour automatiquement dans un
 
 2. **Python** lit ce fichier et met automatiquement à jour votre **Google Sheets**
 
-3. Le tout peut être lancé **d’un simple `python push_xlsx_to_gsheets.py`**
+3. Le tout peut être lancé **d’un simple `Ligues Football EU Gsheet.py`**
 
 ---
 
@@ -23,55 +23,58 @@ Les résultats sont exportés en Excel, puis mis à jour automatiquement dans un
 ```bash
 git clone https://github.com/<votre-nom-utilisateur>/<nom-du-repo>.git
 cd <nom-du-repo>
-```bash
+```
 
-2️⃣ Installer les dépendances R
+### 2️⃣ Installer les dépendances R
 Ouvrez R ou RStudio, puis exécutez :
 
-r
 Copier le code
+```r
 install.packages(c("worldfootballR", "dplyr", "readr", "lubridate", "openxlsx"))
-3️⃣ Installer les dépendances Python
+```
+### 3️⃣ Installer les dépendances Python
+
 Assurez-vous d’avoir Python ≥ 3.10 installé, puis dans le terminal :
 
-bash
-Copier le code
+```python
 pip install pandas openpyxl gspread google-auth google-auth-oauthlib google-auth-httplib2
-🔐 Configuration Google Cloud API
+```
+
+### 🔐 Configuration Google Cloud API
 Rendez-vous sur console.cloud.google.com
 
-Créez un nouveau projet (ou utilisez-en un existant)
+   • Créez un nouveau projet (ou utilisez-en un existant)
 
-Activez l’API suivante :
+   • Activez l’API suivante :
 
-✅ Google Sheets API
+   ✅ Google Sheets API
 
-✅ Google Drive API
+   ✅ Google Drive API
 
-Allez dans “Identifiants” → “Créer des identifiants” → “Compte de service”
+   • Allez dans “Identifiants” → “Créer des identifiants” → “Compte de service”
 
-Téléchargez le fichier JSON (ex. service_account.json)
+   • Téléchargez le fichier JSON (ex. service_account.json)
 
-Placez-le à la racine du projet
+   • Placez-le à la racine du projet
 
-Partagez votre Google Sheet avec l’adresse e-mail du compte de service
-(visible dans le fichier JSON) en tant qu’Éditeur
+   • Partagez votre Google Sheet avec l’adresse e-mail du compte de service (visible dans le fichier JSON) en tant qu’Éditeur
 
-🗂️ Structure du projet
-bash
-Copier le code
+### 🗂️ Structure du projet
+
+```bash
 📁 racine du projet
 ├── push_xlsx_to_gsheets.py     # Script Python principal
 ├── R Ligue Foot.r              # Script R qui extrait et exporte les données
 ├── service_account.json        # Identifiants Google Cloud (à ajouter manuellement)
 ├── 📁 output/                  # Contiendra l’Excel généré automatiquement
 └── README.md
-▶️ Utilisation
+```
+### ▶️ Utilisation
 Une fois tout installé et configuré :
 
-bash
-Copier le code
-python push_xlsx_to_gsheets.py
+```bash
+python Ligues Football EU Gsheet.py
+``
 👉 Le script :
 
 Exécute le code R automatiquement
@@ -82,19 +85,19 @@ Met à jour votre Google Sheet (onglet DATA)
 
 Vous verrez en fin d’exécution un message du type :
 
-bash
-Copier le code
+```bash
 ✅ Feuille 'DATA' mise à jour (80 lignes, 25 colonnes).
 🔗 https://docs.google.com/spreadsheets/d/xxxxxxxxxxxxxx/edit#gid=0
 💡 Conseils
+```
+
 Si Rscript n’est pas reconnu, vérifiez son chemin avec which Rscript et ajustez-le dans le code Python.
 
 Le dossier output/ doit exister (sinon créez-le une fois pour toutes).
 
 Vous pouvez planifier une exécution automatique quotidienne avec cron (Mac/Linux) ou le Planificateur de tâches (Windows).
 
-📄 Licence
+### 📄 Licence
 Ce projet est distribué sous licence MIT.
 
-Auteur : Constantin Moreira
-🧠 Projet combinant R, Python et Google Cloud pour un suivi data football automatisé.
+### 🧠 Projet combinant R, Python et Google Cloud pour un suivi data football automatisé.
