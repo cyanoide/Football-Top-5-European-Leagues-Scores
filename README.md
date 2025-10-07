@@ -73,7 +73,7 @@ Une fois tout installé et configuré :
 
 ```bash
 python Ligues Football EU Gsheet.py
-``
+```
 👉 Le script :
 
 Exécute le code R automatiquement
