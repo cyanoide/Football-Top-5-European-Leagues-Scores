@@ -23,6 +23,8 @@ Les résultats sont exportés en Excel, puis mis à jour automatiquement dans un
 ```bash
 git clone https://github.com/<votre-nom-utilisateur>/<nom-du-repo>.git
 cd <nom-du-repo>
+```bash
+
 2️⃣ Installer les dépendances R
 Ouvrez R ou RStudio, puis exécutez :
 
